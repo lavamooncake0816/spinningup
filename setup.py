@@ -12,7 +12,7 @@ with open(join("spinup", "version.py")) as version_file:
 setup(
     name='spinup',
     py_modules=['spinup'],
-    version=__version__,#'0.1',
+    version=__version__,
     install_requires=[
         'cloudpickle==1.2.1',
         'gym[atari,box2d,classic_control]~=0.15.3',
@@ -26,9 +26,11 @@ setup(
         'psutil',
         'scipy',
         'seaborn==0.8.1',
-        #'tensorflow>=1.8.0,<2.0',
-        'torch>=2.0',
         'tqdm'
+        # ⚠️ REMOVED: tensorflow<2.0
+        # ⚠️ REMOVED: torch==1.3.1
+        # 🔍 Tip: install TF2 manually via pip install tensorflow-macos
+        # 🔍 Tip: install torch manually via pip install torch torchvision torchaudio
     ],
     description="Teaching tools for introducing people to deep RL.",
     author="Joshua Achiam",
